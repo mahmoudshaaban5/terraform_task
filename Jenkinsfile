@@ -9,9 +9,10 @@ pipeline {
             steps{
                 withAWS(credentials: 'aws', region: 'eu-west-3') 
                 {
-                     sh 'terraform fmt'
-                     sh 'terraform init'
-                     sh 'terraform apply --var-file prod.tfvars --auto-approve'
+                    //  sh 'terraform fmt'
+                    //  sh 'terraform init'
+                    //  sh 'terraform apply --var-file prod.tfvars --auto-approve'
+                        sh 'terraform destroy --var-file prod.tfvars --auto-approve'
 
                 }
                
