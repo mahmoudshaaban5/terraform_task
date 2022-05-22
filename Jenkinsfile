@@ -13,9 +13,10 @@ pipeline {
                      sh 'terraform init'
                      sh 'terraform apply --var-file prod.tfvars --auto-approve'
                         // sh 'terraform destroy --var-file prod.tfvars --auto-approve'
-
                 }
-               
+             stage('ansible configration') {
+                steps{
+                    sh 'ansible-playbook -i inventory ansible/playbook.yml'
 
             }
         }
