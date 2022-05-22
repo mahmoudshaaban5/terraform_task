@@ -1,4 +1,5 @@
-- name: Playbook
+
+  - name: Playbook
     hosts: host
     become: yes
     become_user: root
@@ -21,7 +22,7 @@
         copy:
           src: agent.jar
           dest: /home/ubuntu
-
+          
       - name: running docker without sudo  
         user:
           name: "ubuntu"
