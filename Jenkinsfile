@@ -19,6 +19,7 @@ pipeline {
         stage('ansible configration') {
             steps{
                     sh 'ansible-playbook -i inventory ansible/playbook.yml'
+                    sh 'ansible-playbook -i inventory --private-key /var/jenkins_home/key.pem ansible/playbook.yml'
             }
             }
             }
